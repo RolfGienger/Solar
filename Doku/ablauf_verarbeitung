@@ -6,71 +6,9 @@ Namechanger
 
 for i in ./*
 do
-cat $i >> 2004.log
+cat $i >> 2005.log
 done
 
-awk '{print $1 " " $2 ";" $17}' 2004.log > 2004_sf.log
-
-egrep ":00:[0-9]{2};" 2004_sf.log > 2004_sf_extract.log
-
-# awk '{print $1 " " $2 ";" $3}' 2004_sf_extract.log
-
-sed 's/:[0-9]{2};/:00;/'
-
-
-
-
-awk '{print $1 " " $2 ";" $17}' 2004.log | egrep ":00:[0-9]{2};" | sed 's/:[0-9]{2};/:00;/'
-
-
-egrep ":00:[0-9]{2} " 2004.log | awk '{print $1 " " $2 ";" $17}' | perl -pe 's/:[0-9]{2} /:00;/' > 2004_sf_extract.log
-
-
-
-perlscript zur Ergänzung von Zeilen
-
-use Time::Local;
-
-my $starttime = "01.01.2004 00:00:00";
-
-$stime = split(/. :/ );
-
-$time = timelocal( $sec, $min, $hour, $mday, $mon, $year );
-
-($sec,$min,$hour,$mday,$mon,$year,$wday,$yday,$isdst) = localtime($starttime);
-$mday = zweistellig($mday);
-		$mon = $mon + 1;
-		$mon = zweistellig($mon);
-		$year = $year + 1900;
-		$hour = zweistellig($hour);
-		$min = zweistellig($min);
-		$sec = zweistellig($sec);
-		print("$mday.$mon.$year $hour:$min:$sec $line[$client] $line[$clienttype] $line[$policy] $line[$kbytes]\n");
-        
-        
-while <> {
-    chomp();
-    split
-    
-    $utcfromfile = converttime($timefromfile);
-    
-    $utctime+= 3600;
-    
-    while timefromfile ne time {
-      print newvalue;
-      $utctime+=3600;
-    }
-    print valuefromfile;
-}
-
-
-
-# Unterprogramme
-sub zweistellig {
-  my $i = shift;
-  if ($i < 10) {
-    $i = "0" . "$i";
-  }
-  return $i;
-}
+rm 20080*.log
+rm 20081*.log
 
