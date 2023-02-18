@@ -12,3 +12,20 @@ done
 rm 20080*.log
 rm 20081*.log
 
+
+
+Spalte mit Leistungsdaten ergänzen
+< 30 Grad	0%
+30 Grad		10%
+36 Grad		20%
+42 Grad		30%
+48 GRad		40%
+54 Grad		50%
+60 Grad		60%
+66 Grad		70%
+72 Grad		80%
+78 Grad		90%
+84 Grad		100%
+
+Programm mit Übergabewert Leistung bei 100%
+

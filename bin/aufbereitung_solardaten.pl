@@ -1,9 +1,9 @@
 #!/usr/bin/perl -w
 # @(#) $Revision: 1.00 $
 #
-# Zweck     : AUfbereitung von Loggingdaten der Solaranlage
+# Zweck     : Aufbereitung von Loggingdaten der Solaranlage
 #
-# Aufruf    : einspeisung.pl
+# Aufruf    : aufbereitung_solardaten.pl
 #
 # Parameter    :
 #
