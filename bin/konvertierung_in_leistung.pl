@@ -1,5 +1,5 @@
 #!/usr/bin/perl -w
-# @(#) $Revision: 1.10 $
+# @(#) $Revision: 1.20 $
 #
 # Zweck     : Konvertierung einer Eisntrahlungsdatei in einen Leistungsverlauf
 #
@@ -16,6 +16,7 @@
 # Version    Datum        Name    Aenderung
 # 1.0        18.02.2023   Gienger Erstellung
 # 1.1        21.02.2023   Gienger dritte Spalte mit Nullwerten hinzu
+# 1.2        25.02.2023   Gienger Schwellwert angehoben
 #
 #
 
@@ -44,43 +45,43 @@ while (<>) {
 	if ($value < 30) {
 		print("$day;0.0;0.0\n");
 	}
-	if (($value >= 30) && ($value < 36)) {
+	if (($value >= 40) && ($value < 46)) {
 		$pout = $pmax * 0.1;
 		print("$day;$pout;0.0\n");
 	}
-	if (($value >= 36) && ($value < 42)) {
+	if (($value >= 46) && ($value < 52)) {
 		$pout = $pmax * 0.2;
 		print("$day;$pout;0.0\n");
 	}
-	if (($value >= 42) && ($value < 48)) {
+	if (($value >= 52) && ($value < 58)) {
 		$pout = $pmax * 0.3;
 		print("$day;$pout;0.0\n");
 	}
-	if (($value >= 48) && ($value < 54)) {
+	if (($value >= 58) && ($value < 64)) {
 		$pout = $pmax * 0.4;
 		print("$day;$pout;0.0\n");
 	}
-	if (($value >= 54) && ($value < 60)) {
+	if (($value >= 64) && ($value < 70)) {
 		$pout = $pmax * 0.5;
 		print("$day;$pout;0.0\n");
 	}
-	if (($value >= 60) && ($value < 66)) {
+	if (($value >= 70) && ($value < 76)) {
 		$pout = $pmax * 0.6;
 		print("$day;$pout;0.0\n");
 	}
-	if (($value >= 66) && ($value < 72)) {
+	if (($value >= 76) && ($value < 82)) {
 		$pout = $pmax * 0.7;
 		print("$day;$pout;0.0\n");
 	}
-	if (($value >= 72) && ($value < 78)) {
+	if (($value >= 82) && ($value < 88)) {
 		$pout = $pmax * 0.8;
 		print("$day;$pout;0.0\n");
 	}
-	if (($value >= 78) && ($value < 84)) {
+	if (($value >= 88) && ($value < 94)) {
 		$pout = $pmax * 0.9;
 		print("$day;$pout;0.0\n");
 	}
-	if ($value >= 84) {
+	if ($value >= 94) {
 		print("$day;$pmax;0.0\n");
 	}
 	$day++;
