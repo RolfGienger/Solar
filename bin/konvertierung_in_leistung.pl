@@ -1,5 +1,5 @@
 #!/usr/bin/perl -w
-# @(#) $Revision: 1.20 $
+# @(#) $Revision: 1.30 $
 #
 # Zweck     : Konvertierung einer Eisntrahlungsdatei in einen Leistungsverlauf
 #
@@ -17,6 +17,7 @@
 # 1.0        18.02.2023   Gienger Erstellung
 # 1.1        21.02.2023   Gienger dritte Spalte mit Nullwerten hinzu
 # 1.2        25.02.2023   Gienger Schwellwert angehoben
+# 1.3        26.02.2023   Gienger Fehler behoben
 #
 #
 
@@ -42,7 +43,7 @@ print("Stunde;max. Leistung in kW; min. Leistung in kW\n");
 while (<>) {
 	chomp();
 	($timefromfile, $value) = split(/;/);
-	if ($value < 30) {
+	if ($value < 40) {
 		print("$day;0.0;0.0\n");
 	}
 	if (($value >= 40) && ($value < 46)) {
